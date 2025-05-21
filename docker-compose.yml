@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.3
+    container_name: mysql-electricity-business
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    # ports:
+    #   - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  
+  app:
+    build: ./electricity-business
+    container_name: app-electricity-business
+    depends_on:
+      - mysql
+    restart: on-failure
+    environment:
+      DB_HOST: mysql-electricity-business
+      DB_PORT: 3306
+      DB_NAME: testdb
+      DB_USER: user
+      DB_PASSWORD: password
+
+
+
+volumes:
+  mysql_data:
