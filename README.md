@@ -35,9 +35,9 @@ Chaque entité est persistée en base de données via une architecture ORM, avec
 
 ## Lancement du projet
 
-1. Exécuter le container docker à partir du dossier contenant tout le projet : ```bash docker compose up --build app`
-2. Accéder aux tables à partir du project maven : ```bash docker exec -it mysql-electricity-business mysql -uroot -p`
-3. Entrez le mot de passe : ```bash root`
+1. Exécuter le container docker à partir du dossier contenant tout le projet : ```bash docker compose up --build app```
+2. Accéder aux tables à partir du project maven : ```bash docker exec -it mysql-electricity-business mysql -uroot -p```
+3. Entrez le mot de passe : ```bash root``
 
 ---
 
